@@ -59,4 +59,4 @@ All website files are located in:
 ---
 
 ## 📲 Receiving Lead Alerts on Your Phone
-By default, submissions are saved locally and format instant text messages (`sms:9037227964`). To receive instant email alerts, you can plug in any free form service such as [Formspree.io](https://formspree.io) or [Web3Forms](https://web3forms.com) by pasting your free endpoint URL into the `action=""` attribute of the forms in `index.html`.
+By default, submissions are saved locally and format instant text messages (`sms:9037222964`). To receive instant email alerts, you can plug in any free form service such as [Formspree.io](https://formspree.io) or [Web3Forms](https://web3forms.com) by pasting your free endpoint URL into the `action=""` attribute of the forms in `index.html`.

@@ -58,6 +58,6 @@
 ## 📞 Contact Information
 
 - **Company**: Marshall Lawn and Landscape
-- **Phone**: [(903) 722-7964](tel:9037227964) / [(903) 204-7744](tel:9032047744)
+- **Phone**: [(903) 722-2964](tel:9037222964) / [(903) 204-7744](tel:9032047744)
 - **Address**: 600 Shadywood Dr, Marshall, TX 75670
 - **Google Maps Listing**: [https://maps.app.goo.gl/7twCdzKuj2qymKT19](https://maps.app.goo.gl/7twCdzKuj2qymKT19)

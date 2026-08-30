@@ -1677,6 +1677,273 @@ button, input, select, textarea {
   cursor: pointer;
 }
 
+/* ==========================================================================
+   Top Announcement & Emergency Dispatch Bar
+   ========================================================================== */
+.top-announcement-bar {
+  background: linear-gradient(90deg, #15803d 0%, #16a34a 50%, #15803d 100%);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-align: center;
+  position: relative;
+  z-index: 1001;
+  letter-spacing: 0.02em;
+}
+
+.top-announcement-bar a {
+  color: #ffffff;
+  text-decoration: underline;
+  margin-left: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.top-announcement-bar a:hover {
+  color: var(--accent-gold);
+}
+
+/* ==========================================================================
+   Video Reel & Project Walkthrough Section
+   ========================================================================== */
+.video-section {
+  padding: 100px 0;
+  background: var(--bg-main);
+}
+
+.video-reel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.video-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  box-shadow: var(--card-shadow);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-400);
+  box-shadow: var(--card-shadow), var(--glow-primary);
+}
+
+.video-thumb-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.video-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.video-card:hover .video-thumb-img {
+  transform: scale(1.08);
+}
+
+.video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.9);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.6);
+  transition: all var(--transition-fast);
+}
+
+.video-card:hover .video-play-btn {
+  transform: translate(-50%, -50%) scale(1.15);
+  background: var(--primary-500);
+  box-shadow: 0 0 35px rgba(34, 197, 94, 0.9);
+}
+
+.video-duration-badge {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.video-card-body {
+  padding: 1.5rem;
+}
+
+.video-card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.video-card-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Video Modal */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.94);
+  backdrop-filter: blur(12px);
+  z-index: 5000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.video-modal.active {
+  display: flex;
+  animation: fadeIn 0.25s ease;
+}
+
+.video-modal-content {
+  width: 100%;
+  max-width: 960px;
+  position: relative;
+}
+
+.video-player-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+  background: #000;
+}
+
+.video-player-container iframe,
+.video-player-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   High-Impact Call to Action Banner
+   ========================================================================== */
+.cta-banner-section {
+  padding: 80px 0;
+  background: radial-gradient(circle at 50% 50%, rgba(22, 163, 74, 0.25) 0%, rgba(11, 19, 16, 0.98) 100%);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner-box {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-phone-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 900;
+  color: var(--accent-gold);
+  margin: 1.5rem 0;
+  text-shadow: 0 0 25px rgba(245, 158, 11, 0.4);
+  transition: transform var(--transition-fast);
+}
+
+.cta-phone-highlight:hover {
+  transform: scale(1.05);
+  color: #fbbf24;
+}
+
+/* ==========================================================================
+   Floating Pulsating Call Button
+   ========================================================================== */
+.floating-call-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  z-index: 998;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #ffffff;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 1rem;
+  box-shadow: 0 8px 25px rgba(22, 163, 74, 0.6), 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: pulseGreen 2.5s infinite;
+  transition: all var(--transition-bounce);
+  text-decoration: none;
+}
+
+.floating-call-btn:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 12px 35px rgba(22, 163, 74, 0.85);
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.floating-call-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+@keyframes pulseGreen {
+  0% {
+    box-shadow: 0 8px 25px rgba(22, 163, 74, 0.6), 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    box-shadow: 0 8px 25px rgba(22, 163, 74, 0.6), 0 0 0 16px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 8px 25px rgba(22, 163, 74, 0.6), 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+
 
 
 /* ==========================================================================

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBeforeAfterSlider();
   initMaterialVisualizer();
   initGallery();
+  initVideoReels();
   initZipChecker();
   initFaqAccordion();
   initModalsAndForms();
@@ -589,4 +590,47 @@ function initGallery() {
     });
   }
 }
+
+/* ==========================================================================
+   10. Video Reel Modal Player
+   ========================================================================== */
+function initVideoReels() {
+  const videoCards = document.querySelectorAll('.video-card');
+  const videoModal = document.getElementById('videoPlayModal');
+  const videoIframe = document.getElementById('videoPlayerIframe');
+  const videoTitle = document.getElementById('videoModalTitle');
+  const closeBtn = document.getElementById('videoModalCloseBtn');
+
+  if (!videoCards.length || !videoModal || !videoIframe) return;
+
+  videoCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const src = card.dataset.videoSrc;
+      const title = card.dataset.videoTitle || 'Marshall Lawn and Landscape Project Reel';
+      videoIframe.src = src;
+      if (videoTitle) videoTitle.textContent = title;
+      videoModal.classList.add('active');
+    });
+  });
+
+  function closeVideo() {
+    videoModal.classList.remove('active');
+    videoIframe.src = '';
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeVideo);
+  }
+
+  videoModal.addEventListener('click', (e) => {
+    if (e.target === videoModal) closeVideo();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+      closeVideo();
+    }
+  });
+}
+
 
