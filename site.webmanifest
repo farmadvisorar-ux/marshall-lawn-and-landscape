@@ -1,0 +1,17 @@
+{
+  "name": "Marshall Lawn and Landscape",
+  "short_name": "Marshall Lawn",
+  "description": "Top-rated residential and commercial lawn care, landscaping, and hardscaping in Marshall, TX.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0b1310",
+  "theme_color": "#16a34a",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
