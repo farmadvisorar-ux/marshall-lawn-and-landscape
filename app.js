@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initQuoteCalculator();
   initBeforeAfterSlider();
   initMaterialVisualizer();
+  initGallery();
   initZipChecker();
   initFaqAccordion();
   initModalsAndForms();
@@ -532,3 +533,60 @@ function initMobileMenu() {
     });
   }
 }
+
+/* ==========================================================================
+   9. Photo Gallery Filter & Lightbox Viewer
+   ========================================================================== */
+function initGallery() {
+  const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+  const items = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('galleryLightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxCloseBtn');
+
+  if (!items.length) return;
+
+  // Filter functionality
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      items.forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Lightbox functionality
+  if (lightbox && lightboxImg && lightboxCaption) {
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const fullImg = item.dataset.img || item.querySelector('img').src;
+        const title = item.dataset.title || item.querySelector('.gallery-item-title').textContent;
+        lightboxImg.src = fullImg;
+        lightboxCaption.textContent = title;
+        lightbox.classList.add('active');
+      });
+    });
+
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', () => lightbox.classList.remove('active'));
+    }
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.classList.remove('active');
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') lightbox.classList.remove('active');
+    });
+  }
+}
+
