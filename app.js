@@ -193,23 +193,23 @@ function initBeforeAfterSlider() {
 
   const presets = {
     restoration: {
-      before: 'https://images.unsplash.com/photo-1590682680695-43b964a3ae17?auto=format&fit=crop&w=1200&q=80',
-      after: 'https://images.unsplash.com/photo-1592417817098-8f3d691079d7?auto=format&fit=crop&w=1200&q=80',
+      before: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnr8Au0wMUbP3IJky3UvjJVsECEFU-D5P4ecoh3ln4HSR8lmgdwY1rIVlWuBsMajULR_0OirxkEP4Vg30kemOayLlHWkd2eP27u-XrvMRhpsHUf_VDdEQE5GFIOEJJbrMCmlitZ=w1200-h800-k-no',
+      after: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnr8Au0wMUbP3IJky3UvjJVsECEFU-D5P4ecoh3ln4HSR8lmgdwY1rIVlWuBsMajULR_0OirxkEP4Vg30kemOayLlHWkd2eP27u-XrvMRhpsHUf_VDdEQE5GFIOEJJbrMCmlitZ=w1200-h800-k-no',
       title: 'Overgrown Turf to Striped Precision Lawn'
     },
     hardscape: {
-      before: 'https://images.unsplash.com/photo-1558904541-efa8c4a08931?auto=format&fit=crop&w=1200&q=80',
-      after: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1200&q=80',
+      before: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnr8Au0wMUbP3IJky3UvjJVsECEFU-D5P4ecoh3ln4HSR8lmgdwY1rIVlWuBsMajULR_0OirxkEP4Vg30kemOayLlHWkd2eP27u-XrvMRhpsHUf_VDdEQE5GFIOEJJbrMCmlitZ=w1200-h800-k-no',
+      after: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnr8Au0wMUbP3IJky3UvjJVsECEFU-D5P4ecoh3ln4HSR8lmgdwY1rIVlWuBsMajULR_0OirxkEP4Vg30kemOayLlHWkd2eP27u-XrvMRhpsHUf_VDdEQE5GFIOEJJbrMCmlitZ=w1200-h800-k-no',
       title: 'Dirt Slope to Custom Flagstone Patio & Fire Pit'
     },
     flowerbed: {
-      before: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80',
-      after: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=80',
+      before: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnr8Au0wMUbP3IJky3UvjJVsECEFU-D5P4ecoh3ln4HSR8lmgdwY1rIVlWuBsMajULR_0OirxkEP4Vg30kemOayLlHWkd2eP27u-XrvMRhpsHUf_VDdEQE5GFIOEJJbrMCmlitZ=w1200-h800-k-no',
+      after: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnr8Au0wMUbP3IJky3UvjJVsECEFU-D5P4ecoh3ln4HSR8lmgdwY1rIVlWuBsMajULR_0OirxkEP4Vg30kemOayLlHWkd2eP27u-XrvMRhpsHUf_VDdEQE5GFIOEJJbrMCmlitZ=w1200-h800-k-no',
       title: 'Weed-Infested Beds to Premium Mulch & Perennial Garden'
     },
     sod: {
-      before: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80',
-      after: 'https://images.unsplash.com/photo-1592417817098-8f3d691079d7?auto=format&fit=crop&w=1200&q=80',
+      before: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnr8Au0wMUbP3IJky3UvjJVsECEFU-D5P4ecoh3ln4HSR8lmgdwY1rIVlWuBsMajULR_0OirxkEP4Vg30kemOayLlHWkd2eP27u-XrvMRhpsHUf_VDdEQE5GFIOEJJbrMCmlitZ=w1200-h800-k-no',
+      after: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnr8Au0wMUbP3IJky3UvjJVsECEFU-D5P4ecoh3ln4HSR8lmgdwY1rIVlWuBsMajULR_0OirxkEP4Vg30kemOayLlHWkd2eP27u-XrvMRhpsHUf_VDdEQE5GFIOEJJbrMCmlitZ=w1200-h800-k-no',
       title: 'Patchy Bare Dirt to Instant Lush Zoysia Sod'
     }
   };
@@ -267,42 +267,48 @@ function initBeforeAfterSlider() {
    ========================================================================== */
 function initMaterialVisualizer() {
   const swatchBtns = document.querySelectorAll('.swatch-btn');
-  const vizImg = document.getElementById('vizPreviewImg');
+  const vizBox = document.getElementById('vizPreviewBox');
   const vizTitle = document.getElementById('vizTitle');
   const vizDesc = document.getElementById('vizDesc');
 
-  if (!swatchBtns.length || !vizImg) return;
+  if (!swatchBtns.length || !vizBox) return;
 
   const materials = {
     'dark-hardwood': {
       title: 'Premium Double-Shredded Dark Hardwood Mulch',
       desc: 'All-natural shredded hardwood that breaks down slowly to nourish East Texas soil, lock in moisture, regulate root temperature, and prevent stubborn weed germination.',
-      img: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=80'
+      bg: 'linear-gradient(135deg, #3b281c, #1f140e)',
+      icon: '🍂'
     },
     'midnight-black': {
       title: 'Ultra-Rich Midnight Black Dyed Mulch',
       desc: 'Eco-safe dyed black mulch providing maximum color contrast against bright green shrubs and stone borders. Color retains deep hue for up to 12 months in direct Texas sunlight.',
-      img: 'https://images.unsplash.com/photo-1592417817098-8f3d691079d7?auto=format&fit=crop&w=1000&q=80'
+      bg: 'linear-gradient(135deg, #18181b, #09090b)',
+      icon: '🖤'
     },
     'cedar-red': {
       title: 'Aromatic Red Cedar Mulch',
       desc: 'Natural insect-repelling red cedar mulch with a warm rustic hue. Ideal for perimeter beds around outdoor living areas and flower gardens.',
-      img: 'https://images.unsplash.com/photo-1558904541-efa8c4a08931?auto=format&fit=crop&w=1000&q=80'
+      bg: 'linear-gradient(135deg, #7f1d1d, #450a0a)',
+      icon: '🍁'
     },
     'pine-straw': {
       title: 'Longleaf Clean Pine Straw',
       desc: 'Lightweight, acid-loving organic ground cover perfect for azaleas, hydrangeas, pine tree beds, and large estate landscape slopes.',
-      img: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80'
+      bg: 'linear-gradient(135deg, #b45309, #78350f)',
+      icon: '🌲'
     },
     'bermuda-sod': {
       title: 'Tifway 419 Certified Bermuda Sod',
       desc: 'The gold standard for Texas heat and drought tolerance. Dense carpet-like texture, rapid self-repair, and golf-course striping capability in full sun.',
-      img: 'https://images.unsplash.com/photo-1592417817098-8f3d691079d7?auto=format&fit=crop&w=1000&q=80'
+      bg: 'linear-gradient(135deg, #16a34a, #14532d)',
+      icon: '🌱'
     },
     'zoysia-sod': {
       title: 'Emerald / Zeon Luxury Zoysia Sod',
       desc: 'Velvet-soft, barefoot-friendly premium turf with exceptional shade tolerance, minimal mowing requirements, and a deep emerald color.',
-      img: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80'
+      bg: 'linear-gradient(135deg, #15803d, #052e16)',
+      icon: '🌿'
     }
   };
 
@@ -315,9 +321,12 @@ function initMaterialVisualizer() {
       if (materials[matKey]) {
         vizTitle.textContent = materials[matKey].title;
         vizDesc.textContent = materials[matKey].desc;
-        vizImg.src = materials[matKey].img;
+        vizBox.style.background = materials[matKey].bg;
+        vizBox.innerHTML = `<div style="font-size: 3.5rem;">${materials[matKey].icon}</div>`;
       }
     });
+  });
+}
   });
 }
 
