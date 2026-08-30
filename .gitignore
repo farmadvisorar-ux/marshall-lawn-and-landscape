@@ -1,0 +1,10 @@
+# Dependencies & OS Files
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.local
