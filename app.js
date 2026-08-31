@@ -577,13 +577,15 @@ function initGallery() {
   // Lightbox functionality
   if (lightbox && lightboxImg && lightboxCaption) {
     items.forEach(item => {
-      item.addEventListener('click', () => {
-        const fullImg = item.dataset.img || item.querySelector('img').src;
-        const title = item.dataset.title || item.querySelector('.gallery-item-title').textContent;
-        lightboxImg.src = fullImg;
-        lightboxCaption.textContent = title;
-        lightbox.classList.add('active');
-      });
+      if (item.tagName.toLowerCase() === 'div' && item.dataset.img) {
+        item.addEventListener('click', () => {
+          const fullImg = item.dataset.img;
+          const title = item.dataset.title || 'Marshall Lawn and Landscape Official Work';
+          lightboxImg.src = fullImg;
+          lightboxCaption.textContent = title;
+          lightbox.classList.add('active');
+        });
+      }
     });
 
     if (lightboxClose) {

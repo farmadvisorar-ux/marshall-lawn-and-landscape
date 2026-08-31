@@ -1417,7 +1417,31 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   Mobile Sticky Quick-Action Bar
+   Hero Mobile Quick-Action Strip
+   ========================================================================== */
+.hero-mobile-quick-strip {
+  display: none;
+  margin-top: 1.5rem;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-mobile-quick-strip .btn {
+  flex: 1 1 calc(50% - 0.5rem);
+  min-height: 48px;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+}
+
+.btn-call-pulse {
+  background: linear-gradient(135deg, #16a34a, #15803d) !important;
+  color: #fff !important;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+  animation: pulseGreen 2.5s infinite;
+}
+
+/* ==========================================================================
+   Mobile Sticky Quick-Action Command Center Bar
    ========================================================================== */
 .mobile-action-bar {
   display: none;
@@ -1425,17 +1449,21 @@ button, input, select, textarea {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: var(--bg-surface);
-  border-top: 1px solid var(--border-color);
-  z-index: 999;
-  padding: 0.75rem 1rem;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+  background: rgba(11, 19, 16, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(34, 197, 94, 0.35);
+  z-index: 10000;
+  padding: 0.5rem 0.5rem calc(0.5rem + env(safe-area-inset-bottom)) 0.5rem;
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.75);
 }
 
 .mobile-action-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.3fr;
-  gap: 0.5rem;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1.2fr;
+  gap: 0.35rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .mobile-btn {
@@ -1444,19 +1472,54 @@ button, input, select, textarea {
   align-items: center;
   justify-content: center;
   gap: 0.2rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.5rem 0.25rem;
-  border-radius: var(--radius-sm);
-  background: var(--bg-surface-elevated);
+  min-height: 52px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
   color: var(--text-main);
   border: 1px solid var(--border-color);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  touch-action: manipulation;
 }
 
-.mobile-btn.btn-cta {
-  background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
-  color: #fff;
-  border: none;
+.mobile-btn:active {
+  transform: scale(0.94);
+  background: rgba(34, 197, 94, 0.2);
+}
+
+.mobile-btn-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+}
+
+.mobile-btn-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.mobile-btn-call {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: #ffffff;
+  border-color: #22c55e;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+  animation: pulseGreen 2.5s infinite;
+}
+
+.mobile-btn-call .mobile-btn-label {
+  color: #ffffff;
+}
+
+.mobile-btn-google {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.mobile-btn-google .mobile-btn-label {
+  color: var(--accent-gold);
 }
 
 /* ==========================================================================
@@ -1973,11 +2036,31 @@ button, input, select, textarea {
     padding-top: 110px;
     min-height: auto;
   }
+  .hero-cta-group {
+    display: none;
+  }
+  .hero-mobile-quick-strip {
+    display: flex;
+  }
   .hero-trust-list {
     grid-template-columns: 1fr;
   }
   .service-toggle-grid {
     grid-template-columns: 1fr;
+  }
+  .gallery-filter-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.75rem;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.5rem;
+    scrollbar-width: thin;
+  }
+  .gallery-filter-btn {
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
   }
   .booking-form {
     grid-template-columns: 1fr;
@@ -1988,11 +2071,14 @@ button, input, select, textarea {
   .ba-container {
     height: 360px;
   }
+  .floating-call-btn {
+    display: none; /* Replaced by bottom command bar on mobile */
+  }
   .mobile-action-bar {
     display: block;
   }
   body {
-    padding-bottom: 70px;
+    padding-bottom: calc(85px + env(safe-area-inset-bottom));
   }
   .footer-grid {
     grid-template-columns: 1fr;
